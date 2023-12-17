@@ -67,7 +67,7 @@ async def classificationCNN(file: UploadFile = File(...)) -> dict:
 
     prediction = np.argmax(class_model.predict(preprocess_classification(im)))
 
-
+    print(df.iloc[prediction, 1])
     return {
         "prediction_protein": df.iloc[prediction, 2],
         "prediction_carbohydrates": df.iloc[prediction, 3],

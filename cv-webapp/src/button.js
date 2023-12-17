@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState } from 'react';
 import { styled } from '@mui/material/styles';
 import Button from '@mui/material/Button';
-import { Grid, Paper } from '@mui/material';
+import { Grid, Paper, Typography } from '@mui/material';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -45,19 +45,22 @@ export default function InputFileUpload() {
     }
     return (
         <Grid container justifyContent='center' spacing={4}>
+            <Grid item >
+                <Typography variant='h2'>Healthy Plugin</Typography>
+            </Grid>
             <Grid container item xs={12} justifyContent='center'>
-                <Button component="label" variant="contained" >
+                <Button component="label" variant="contained" sx={{backgroundColor:"#C3714B", ":hover":{backgroundColor:"#C3714B"}}}>
                     Upload file
                     <VisuallyHiddenInput onChange={Submit} type="file" />
                 </Button>
             </Grid>
-            <Grid item xs={9}>
+            <Grid item xs={6}>
                 <TableContainer component={Paper}>
                     <Table sx={{ minWidth: 650 }} aria-label="simple table">
                         <TableHead>
                             <TableRow>
                                 <TableCell><b>Nutrients</b></TableCell>
-                                <TableCell align="right"><b>Value&nbsp;(/100g)</b></TableCell>
+                                <TableCell align="right"><b>Value&nbsp;(per serving)</b></TableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
