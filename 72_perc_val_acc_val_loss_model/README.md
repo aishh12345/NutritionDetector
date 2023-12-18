@@ -1,0 +1,1 @@
+This directory consists of the files related to Classification CNN Model 2.
